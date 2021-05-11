@@ -32,7 +32,10 @@ const App = () => {
       <GlobalStyle />
       <AppWrapper>
         <Header />
-        <Board lanes={lanes} dataSource={"../../assets/data.json"} />
+        <Board
+          lanes={lanes}
+          dataSource={"../../ProjectManagementBoard/assets/data.json"}
+        />
       </AppWrapper>
     </>
   );
