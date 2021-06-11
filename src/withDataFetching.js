@@ -10,7 +10,6 @@ const withDataFetching = (WrappedComponent) => {
       const fetchData = async () => {
         try {
           const tickets = await fetch(props.dataSource);
-          console.log(tickets);
           const ticketsJSON = await tickets.json();
           setData(ticketsJSON);
           setLoading(false);
@@ -21,8 +20,7 @@ const withDataFetching = (WrappedComponent) => {
       };
 
       fetchData();
-      console.log(data);
-    }, [data, props.dataSource]);
+    }, [props.dataSource]);
 
     return (
       <WrappedComponent

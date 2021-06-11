@@ -21,7 +21,6 @@ const Board = ({ lanes, loading, error, data }) => {
   }, [data]);
 
   const onDragStart = (ev, id) => {
-    console.log("dragstart:", id);
     ev.dataTransfer.setData("id", id);
   };
 
@@ -31,7 +30,6 @@ const Board = ({ lanes, loading, error, data }) => {
 
   const onDrop = (e, laneId) => {
     const id = e.dataTransfer.getData("id");
-    console.log("lane id:" + laneId + " id+ " + id);
     const updatedTickets = tickets.filter((ticket) => {
       if (ticket.id === parseInt(id)) {
         ticket.lane = laneId;
